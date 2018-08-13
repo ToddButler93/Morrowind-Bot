@@ -11,6 +11,7 @@
   "dependencies": {
     "discord.js": "^11.3.2",
     "discord.js-commando": "^0.10.0",
-    "dotenv": "^5.0.1"
+    "dotenv": "^5.0.1",
+    "node-run-cmd": "^1.0.1"
   }
 }

@@ -1,5 +1,5 @@
 const commando = require('discord.js-commando');
-var exec = require('child_process').execFile;
+var nrc = require('node-run-cmd');
 
 class StartServerCommand extends commando.Command {
     constructor(client) {
@@ -13,13 +13,11 @@ class StartServerCommand extends commando.Command {
 
     run(message) {
         message.channel.send("Server Started.");
-        exec('tes3mp-server.exe', {
-            cwd: 'C:/Games/Morrowind/'
-          }, function(error, stdout, stderr) {
-            console.log(error);
-            console.log(stdout);
-            console.log(stderr); 
-         });
+        var commands = [
+            'tes3mp-server.exe'
+          ];
+          var options = { cwd: 'C:/Games/Morrowind/' };
+          nrc.run(commands, options);
     }
 }
 module.exports = StartServerCommand;
